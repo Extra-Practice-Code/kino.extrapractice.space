@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Practice Kino</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            font-family: Arial Narrow, Arial;
+            font-size: 15px;
+            background-color: #000;
+        }
+        main {
+            max-width: 400px;
+            padding: 15px;
+        }
+        
+        header {
+            color: #fff;
+            padding: 12px;
+            font-size: 20px;
+            border: 1px solid #ddd;
+            border-left-color: rgb(81, 81, 24);
+            border-right-color: rgb(86, 20, 86);
+            border-bottom-color: rgb(86, 20, 86);
+            border-top-color: rgb(22, 78, 22);
+            aspect-ratio: 16 / 9;
+            /* background-color: #030565; */
+            /* background-image: #8fb6ff; */
+        }
+        h1 {
+            font-size: 20px;
+            color: white;
+            font-weight: normal;
+            background-color: #030565;
+            width: min-content;
+        }
+
+        #events {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .event {
+            color: #fff;
+            background-color: #330037;
+            padding: 10px;
+            font-size: 15px;
+            line-height: 20px;
+            border-bottom: 1px dashed #000;
+            border-left: 1px solid magenta;
+        }
+        .event.past {
+            opacity: 0.3;
+        }
+        .event-when {
+            font-weight: bold;
+            background-color: rgba(0, 19, 81, 0.094);
+            width: max-content;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>kino.extrapractice.space</h1>
+
+            <p>where <i style="color: magenta">cinema</i> meets ____________</p>
+        
+            <p id="info">Screenings most Wednesdays at 20:00</p>
+
+            <p></p>
+        </header>
+
+        <br>
+
+        <div id="events">
+            <div class="event">
+                <div class="event-when">January 8, 2025 @ 20:00</div>
+                <div class="event-film">Film: Nosferatu, Werner Herzog (1979)</div>
+                <div class="event-recommended-by">Recommended By: Elliott</div>
+                <div class="event-why">
+                    Why: because the other version is playing at Kino.
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">January 8, 2025 @ 12:23</div>
+                <div class="event-film">Film: ...</div>
+                <div class="event-recommended-by">Recommended By: ...</div>
+                <div class="event-why">
+                    Why: ...
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">January 7, 2025 @ 20:00</div>
+                <div class="event-film">Film: ...</div>
+                <div class="event-recommended-by">Recommended By: ...</div>
+                <div class="event-why">
+                    ...
+                </div>
+            </div>
+        </div>
+    
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>When</th>
+                    <th>Film Title</th>
+                    <th>Recommended By</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>January 8, 2025</td>
+                    <td>Nosferatu, Werner Herzog (1979)</td>
+                    <td>Elliott</td>
+                    <td>because the other version is playing at Kino.</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const events = document.querySelectorAll('.event');
+                
+                events.forEach(event => {
+                    const whenText = event.querySelector('.event-when').textContent;
+                    const [datePart, timePart] = whenText.split('@');
+                    const [hours, minutes] = timePart.trim().split(':');
+                    const eventDate = new Date(datePart);
+                    eventDate.setHours(parseInt(hours), parseInt(minutes), 0);
+                    
+                    const now = new Date();
+                    
+                    if (eventDate > now) {
+                        event.classList.add('upcoming');
+                    } else {
+                        event.classList.add('past');
+                    }
+                });
+
+                // Add letter colorization
+                const headerElement = document.querySelector('header');
+                const colors = ['green', 'yellow', 'magenta', 'cyan'];
+                
+                function getTextNodes() {
+                    const textNodes = [];
+                    const walker = document.createTreeWalker(
+                        headerElement,
+                        NodeFilter.SHOW_TEXT,
+                        {
+                            acceptNode: function(node) {
+                                // Skip text nodes inside elements with color styles
+                                if (node.parentElement.style.color) {
+                                    return NodeFilter.FILTER_SKIP;
+                                }
+                                return NodeFilter.FILTER_ACCEPT;
+                            }
+                        },
+                        false
+                    );
+
+                    let node;
+                    while (node = walker.nextNode()) {
+                        if (node.textContent.trim()) {
+                            textNodes.push(node);
+                        }
+                    }
+                    return textNodes;
+                }
+                
+                setInterval(() => {
+                    const textNodes = getTextNodes(); // Get fresh text nodes each time
+                    if (textNodes.length === 0) return;
+
+                    // Pick a random text node
+                    const randomNode = textNodes[Math.floor(Math.random() * textNodes.length)];
+                    const text = randomNode.textContent;
+                    const randomLetterIndex = Math.floor(Math.random() * text.length);
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    const colorizedText = text.split('').map((letter, index) => {
+                        if (index === randomLetterIndex) {
+                            return `<span style="color: ${randomColor}">${letter}</span>`;
+                        }
+                        return letter;
+                    }).join('');
+                    
+                    const span = document.createElement('span');
+                    span.innerHTML = colorizedText;
+                    randomNode.parentNode.replaceChild(span, randomNode);
+                }, 2000);
+            });
+        </script>
+    </main>
+</body>
+</html>
