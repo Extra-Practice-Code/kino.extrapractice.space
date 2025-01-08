@@ -5,90 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extra Practice Kino</title>
     <style>
+        *, *:before, *:after { box-sizing: border-box; }
         body {
             background-color: #000;
             margin: 0;
             padding: 0;
-            font-family: Arial Narrow, Arial;
+            font-family: Courier, monospace;
             font-size: 15px;
+            line-height: 20px;
+            color: #fff;
             background-color: #000;
+            margin: 15px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale; 
+            -webkit-text-size-adjust: none;
         }
         main {
-            max-width: 400px;
             padding: 15px;
         }
         
         header {
             color: #fff;
-            padding: 12px;
-            font-size: 20px;
-            border: 1px solid #ddd;
-            border-left-color: rgb(81, 81, 24);
-            border-right-color: rgb(86, 20, 86);
-            border-bottom-color: rgb(86, 20, 86);
-            border-top-color: rgb(22, 78, 22);
-            aspect-ratio: 16 / 9;
             /* background-color: #030565; */
             /* background-image: #8fb6ff; */
         }
         h1 {
-            font-size: 20px;
+            font-size: inherit;
             color: white;
             font-weight: normal;
             background-color: #030565;
             width: min-content;
         }
+        h2 {
+            font-weight: normal;
+            font-size: inherit;
+        }
 
         #events {
             display: flex;
-            flex-direction: column;
+            flex-flow: row wrap;
             gap: 15px;
         }
         .event {
+            font-family: Courier, monospace;
             color: #fff;
-            background-color: #330037;
+            background-color: #07006c;
             padding: 10px;
-            font-size: 15px;
-            line-height: 20px;
+            font-size: 14px;
             border-bottom: 1px dashed #000;
             border-left: 1px solid magenta;
+            aspect-ratio: 4 / 3;
+            max-width: 300px;
+            min-width: 300px;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+        .event div {
+            background-color: #00000056;
+            margin-bottom: 3px;
+            padding: 2px;
+        }
+        .event.upcoming {
+            border-left-color: rgb(16, 85, 0);
         }
         .event.past {
             opacity: 0.3;
         }
         .event-when {
             font-weight: bold;
-            background-color: rgba(0, 19, 81, 0.094);
-            width: max-content;
             margin-bottom: 4px;
         }
+        .favicon {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: magenta;
+        }
+        hr {
+            border: 0;
+            border-bottom: 1px solid #fff;
+        }
+        
+        /* People */
+        #people {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .emma { background-color: red; }
+        .gijs { background-color: blue; }
+        .jack { background-color: #FF8000; }
+        .ben { background-color: green; }
+        .kirsten { background-color: rgb(255, 248, 231); }
+        .elliott { background-color: magenta; }
+        .friend { background-color: rgb(226, 226, 226); }
     </style>
 </head>
 <body>
     <main>
         <header>
             <h1>kino.extrapractice.space</h1>
-
-            <p>where <i style="color: magenta">cinema</i> meets ____________</p>
         
-            <p id="info">Screenings most Wednesdays at 20:00</p>
+            <p id="info">Screening something most Wednesdays at 20:00</p>
+            
+            <hr>
 
-            <p></p>
+            <p id="people">
+                <a class="favicon ben"></a> Ben
+                <a class="favicon emma"></a> Emma
+                <a class="favicon gijs"></a> Gijs
+                <a class="favicon jack"></a> Jack
+                <a class="favicon kirsten"></a> Kirsten
+                <a class="favicon elliott"></a> Elliott
+                <a class="favicon friend"></a> Friend
+            </p>
         </header>
 
         <br>
+
+        <h2>January</h2>
 
         <div id="events">
             <div class="event">
                 <div class="event-when">January 8, 2025 @ 20:00</div>
                 <div class="event-film">Film: Nosferatu, Werner Herzog (1979)</div>
-                <div class="event-recommended-by">Recommended By: Elliott</div>
+                <div class="event-recommended-by">Recommended By: <span class="favicon" style="color: magenta"></span> Elliott</span></div>
+                <div class="event-why">
+                    Why: Because the other version is playing at Kino.
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">January 15, 2025 @ 12:23</div>
+                <div class="event-film">Film:</div>
+                <div class="event-recommended-by">Recommended By:</div>
+                <div class="event-why">
+                    Why:
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">January 22, 2025 @ 20:00</div>
+                <div class="event-film">Film:</div>
+                <div class="event-recommended-by">Recommended By:</div>
+                <div class="event-why">
+                    Why:
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">January 29, 2025 @ 20:00</div>
+                <div class="event-film">Film:</div>
+                <div class="event-recommended-by">Recommended By:</div>
+                <div class="event-why">
+                    Why:
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <h2>February</h2>
+
+        <div id="events">
+            <div class="event">
+                <div class="event-when">February 5, 2025 @ 20:00</div>
+                <div class="event-film">Film: Nosferatu, Werner Herzog (1979)</div>
+                <div class="event-recommended-by">Recommended By: <span class="favicon" style="color: magenta"></span> Elliott</span></div>
                 <div class="event-why">
                     Why: because the other version is playing at Kino.
                 </div>
             </div>
             <div class="event">
-                <div class="event-when">January 8, 2025 @ 12:23</div>
+                <div class="event-when">February 12, 2025 @ 12:23</div>
                 <div class="event-film">Film: ...</div>
                 <div class="event-recommended-by">Recommended By: ...</div>
                 <div class="event-why">
@@ -96,33 +184,22 @@
                 </div>
             </div>
             <div class="event">
-                <div class="event-when">January 7, 2025 @ 20:00</div>
+                <div class="event-when">February 19, 2025 @ 20:00</div>
                 <div class="event-film">Film: ...</div>
                 <div class="event-recommended-by">Recommended By: ...</div>
                 <div class="event-why">
-                    ...
+                    Why: ...
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-when">February 26, 2025 @ 20:00</div>
+                <div class="event-film">Film: ...</div>
+                <div class="event-recommended-by">Recommended By: ...</div>
+                <div class="event-why">
+                    Why: ...
                 </div>
             </div>
         </div>
-    
-        <!-- <table>
-            <thead>
-                <tr>
-                    <th>When</th>
-                    <th>Film Title</th>
-                    <th>Recommended By</th>
-                    <th>Why</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>January 8, 2025</td>
-                    <td>Nosferatu, Werner Herzog (1979)</td>
-                    <td>Elliott</td>
-                    <td>because the other version is playing at Kino.</td>
-                </tr>
-            </tbody>
-        </table> -->
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
