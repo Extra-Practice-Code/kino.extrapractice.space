@@ -22,7 +22,15 @@
             -webkit-text-size-adjust: none;
         }
         main {
+            display: grid;
+            grid-template-columns: 1fr 263px;
             padding: 15px;
+            gap: 15px;
+        }
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
         }
         
         header {
@@ -119,17 +127,16 @@
     </style>
 </head>
     <body>
-        <main>
-            <header>
-                <h1>kino.extrapractice.space</h1>
+        <header>
+            <h1>kino.extrapractice.space</h1>
+        
+            <p id="info">Screening something most Wednesdays at 20:00</p>
+
+            <p>Zwaanshals 209, 3036 KN Rotterdam</p>
             
-                <p id="info">Screening something most Wednesdays at 20:00</p>
+            <hr>
 
-                <p>Zwaanshals 209, 3036 KN Rotterdam</p>
-                
-                <hr>
-
-                <p id="people">
+            <p id="people">
                 <a class="favicon ben"></a> Ben
                 <a class="favicon emma"></a> Emma
                 <a class="favicon gijs"></a> Gijs
@@ -139,158 +146,88 @@
                 <a class="favicon friend"></a> Friend
             </p>
         </header>
-
-        <br>
-
-        <h2>January</h2>
-
-        <div id="events" class="january">
-            <div class="event">
-                <div class="event-when">January 8, 2025 @ 20:00</div>
-                <div class="event-film">Film: Nosferatu, Werner Herzog (1979)</div>
-                <div class="event-recommended-by">Recommended By: <span class="favicon" style="color: magenta"></span> Elliott</span></div>
-                <div class="event-why">
-                    Why: Testing 1, 2, 3.. Is this thing working? [Because the other version is playing at Kino.]
+        <main>
+            <div class="main-content">
+                <h2>January</h2>
+    
+                <div id="events" class="january">
+                    <div class="event">
+                        <div class="event-when">January 8, 2025 @ 20:00</div>
+                        <div class="event-film">Film: Nosferatu, Werner Herzog (1979)</div>
+                        <div class="event-recommended-by">Recommended By: <span class="favicon" style="color: magenta"></span> Elliott</span></div>
+                        <div class="event-why">
+                            Why: Testing 1, 2, 3.. Is this thing working? [Because the other version is playing at Kino.]
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">January 15, 2025 @ 20:00</div>
+                        <div class="event-film">Film:</div>
+                        <div class="event-recommended-by">Recommended By:</div>
+                        <div class="event-why">
+                            Why:
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">January 22, 2025 @ 20:00</div>
+                        <div class="event-film">Film:</div>
+                        <div class="event-recommended-by">Recommended By:</div>
+                        <div class="event-why">
+                            Why:
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">January 29, 2025 @ 20:00</div>
+                        <div class="event-film">Film:</div>
+                        <div class="event-recommended-by">Recommended By:</div>
+                        <div class="event-why">
+                            Why:
+                        </div>
+                    </div>
+                </div>
+    
+                <br>
+    
+                <h2>February</h2>
+    
+                <div id="events" class="february">
+                    <div class="event">
+                        <div class="event-when">February 5, 2025 @ 20:00</div>
+                        <div class="event-film">Film: </div>
+                        <div class="event-recommended-by">Recommended By: </div>
+                        <div class="event-why">
+                            Why: 
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">February 12, 2025 @ 20:00</div>
+                        <div class="event-film">Film: </div>
+                        <div class="event-recommended-by">Recommended By: </div>
+                        <div class="event-why">
+                            Why: 
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">February 19, 2025 @ 20:00</div>
+                        <div class="event-film">Film: </div>
+                        <div class="event-recommended-by">Recommended By: </div>
+                        <div class="event-why">
+                            Why: 
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-when">February 26, 2025 @ 20:00</div>
+                        <div class="event-film">Film: </div>
+                        <div class="event-recommended-by">Recommended By: </div>
+                        <div class="event-why">
+                            Why: 
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="event">
-                <div class="event-when">January 15, 2025 @ 20:00</div>
-                <div class="event-film">Film:</div>
-                <div class="event-recommended-by">Recommended By:</div>
-                <div class="event-why">
-                    Why:
-                </div>
+            <div id="side-content">
+                <script id="cid0020000397407288494" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 263px;height: 375px;">{"handle":"kino-extrapractice","arch":"js","styles":{"a":"000861","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000861","l":"000861","m":"000861","n":"FFFFFF","p":"10","q":"000861","r":100,"t":0,"ab":false,"usricon":0,"surl":0,"allowpm":0,"fwtickm":1}}</script>
             </div>
-            <div class="event">
-                <div class="event-when">January 22, 2025 @ 20:00</div>
-                <div class="event-film">Film:</div>
-                <div class="event-recommended-by">Recommended By:</div>
-                <div class="event-why">
-                    Why:
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-when">January 29, 2025 @ 20:00</div>
-                <div class="event-film">Film:</div>
-                <div class="event-recommended-by">Recommended By:</div>
-                <div class="event-why">
-                    Why:
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <h2>February</h2>
-
-        <div id="events" class="february">
-            <div class="event">
-                <div class="event-when">February 5, 2025 @ 20:00</div>
-                <div class="event-film">Film: </div>
-                <div class="event-recommended-by">Recommended By: </div>
-                <div class="event-why">
-                    Why: 
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-when">February 12, 2025 @ 20:00</div>
-                <div class="event-film">Film: </div>
-                <div class="event-recommended-by">Recommended By: </div>
-                <div class="event-why">
-                    Why: 
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-when">February 19, 2025 @ 20:00</div>
-                <div class="event-film">Film: </div>
-                <div class="event-recommended-by">Recommended By: </div>
-                <div class="event-why">
-                    Why: 
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-when">February 26, 2025 @ 20:00</div>
-                <div class="event-film">Film: </div>
-                <div class="event-recommended-by">Recommended By: </div>
-                <div class="event-why">
-                    Why: 
-                </div>
-            </div>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const events = document.querySelectorAll('.event');
-                
-                events.forEach(event => {
-                    const whenText = event.querySelector('.event-when').textContent;
-                    const [datePart, timePart] = whenText.split('@');
-                    const [hours, minutes] = timePart.trim().split(':');
-                    const eventDate = new Date(datePart);
-                    eventDate.setHours(parseInt(hours), parseInt(minutes), 0);
-                    
-                    const now = new Date();
-                    
-                    if (eventDate > now) {
-                        event.classList.add('upcoming');
-                    } else {
-                        event.classList.add('past');
-                    }
-                });
-
-                // Add letter colorization
-                const headerElement = document.querySelector('header');
-                const colors = ['green', 'yellow', 'magenta', 'cyan'];
-                
-                function getTextNodes() {
-                    const textNodes = [];
-                    const walker = document.createTreeWalker(
-                        headerElement,
-                        NodeFilter.SHOW_TEXT,
-                        {
-                            acceptNode: function(node) {
-                                // Skip text nodes inside elements with color styles
-                                if (node.parentElement.style.color) {
-                                    return NodeFilter.FILTER_SKIP;
-                                }
-                                return NodeFilter.FILTER_ACCEPT;
-                            }
-                        },
-                        false
-                    );
-
-                    let node;
-                    while (node = walker.nextNode()) {
-                        if (node.textContent.trim()) {
-                            textNodes.push(node);
-                        }
-                    }
-                    return textNodes;
-                }
-                
-                setInterval(() => {
-                    const textNodes = getTextNodes(); // Get fresh text nodes each time
-                    if (textNodes.length === 0) return;
-
-                    // Pick a random text node
-                    const randomNode = textNodes[Math.floor(Math.random() * textNodes.length)];
-                    const text = randomNode.textContent;
-                    const randomLetterIndex = Math.floor(Math.random() * text.length);
-                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                    
-                    const colorizedText = text.split('').map((letter, index) => {
-                        if (index === randomLetterIndex) {
-                            return `<span style="color: ${randomColor}">${letter}</span>`;
-                        }
-                        return letter;
-                    }).join('');
-                    
-                    const span = document.createElement('span');
-                    span.innerHTML = colorizedText;
-                    randomNode.parentNode.replaceChild(span, randomNode);
-                }, 2000);
-            });
-        </script>
-    </main>
-</body>
+        </main>
+    </body>
+    <script src="script.js"></script>
 </html>
