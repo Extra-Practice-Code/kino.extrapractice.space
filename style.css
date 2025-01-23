@@ -95,6 +95,24 @@ hr {
     margin-top: 20px;
 }
 
+#header-top {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+#header-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+}
+video {
+    width: 100%;
+    max-height: 300px;
+}
+
 .emma { background-color: #ff0000; }
 .gijs { background-color: #0000ff; }
 .jack { background-color: #FF8000; }

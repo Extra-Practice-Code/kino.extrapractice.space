@@ -68,4 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         span.innerHTML = colorizedText;
         randomNode.parentNode.replaceChild(span, randomNode);
     }, 2000);
+
+    const headerVideo = document.getElementById('header-video');
+    headerVideo.playbackRate = 0.2; // This will make it play at half speed
 });
